@@ -1,0 +1,16 @@
+{
+  "name": "planit-jupiter",
+  "version": "1.0.0",
+  "description": "Automation for my Planit Technical Assessment",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --project=chromium"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.13.10"
+  }
+}
