@@ -3,6 +3,7 @@ import { JupiterToysPage } from "./JupiterToysPage";
 import { clickLocator } from "../../helpers/actions";
 import { extractNumericValue } from "../../helpers/utils";
 
+/* Shop Page - for buy buttons and prices */
 export class ShopPage extends JupiterToysPage {
     readonly buyButton: Record<string, Locator> = {};
     readonly price: Record<string, number> = {};

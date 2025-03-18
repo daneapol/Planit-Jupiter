@@ -1,6 +1,7 @@
 import { Locator, Page } from "playwright";
 import { clickLocator } from "../../helpers/actions";
 
+/* Superclass of all Jupiter Toys pages since each page contains the links below */
 export class JupiterToysPage {
     readonly page: Page;
     readonly shopLink: Locator;

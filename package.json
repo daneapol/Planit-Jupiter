@@ -4,7 +4,7 @@
   "description": "Automation for my Planit Technical Assessment",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test --project=chromium"
+    "test": "npx playwright test"
   },
   "keywords": [],
   "author": "",

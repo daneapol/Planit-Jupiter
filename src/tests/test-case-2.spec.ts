@@ -41,14 +41,22 @@ test.describe('Run contact test 5 times', async () => {
             await expect(page).toHaveURL(DOMAIN_OCTOTORPHE);
         
             const jupiterToysPage: JupiterToysPage = new JupiterToysPage(page);
+            
+            /* From the home page go to contact page */
             await jupiterToysPage.clickContactLink();
             await expect(jupiterToysPage.page).toHaveURL(URLS.CONTACT);
         
             const contactPage: ContactPage = new ContactPage(jupiterToysPage.page);
+
+            /* Populate mandatory fields */
             await populateContactPage(contactPage, data[i]);
+
+            /* Click submit button */
             await contactPage.clickSubmitButton();
         
             const confirmationPage: ConfirmationPage = new ConfirmationPage(contactPage.page);
+
+            /* Validate successful submission message */
             expect(await confirmationPage.checkConfirmationMessage()).toEqual(true);
         });
     }

@@ -3,6 +3,7 @@ import { JupiterToysPage } from "./JupiterToysPage";
 import { CartItem, CartSummary } from "../interfaces";
 import { extractNumericValue } from "../../helpers/utils";
 
+/* Cart Page - for extracting order details (product, price, subtotal, total) */
 export class CartPage extends JupiterToysPage {
     readonly cartTable: Locator;
     readonly totalText: Locator;
