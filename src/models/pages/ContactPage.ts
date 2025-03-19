@@ -2,7 +2,7 @@ import { Locator, Page } from "playwright";
 import { JupiterToysPage } from "./JupiterToysPage";
 import { clickLocator, fillInput } from "../../helpers/actions";
 
-/* Contact Page - for filling fields and checking error messages */
+/* POM for Contact Page - for filling fields and checking error messages */
 export class ContactPage extends JupiterToysPage {
     readonly forenameInput: Locator;
     readonly emailInput: Locator;

@@ -1,7 +1,7 @@
 import { Locator, Page } from "playwright";
 import { JupiterToysPage } from "./JupiterToysPage";
 
-/* Confirmation Page containing the confirmation message */
+/* POM for Confirmation Page containing the confirmation message */
 export class ConfirmationPage extends JupiterToysPage {
     readonly confirmationMessage: Locator;
 
