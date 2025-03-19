@@ -5,6 +5,7 @@ import { JupiterToysPage } from "../models/pages/JupiterToysPage";
 import { populateContactPage } from "../helpers/populators";
 import { ContactDetails } from "../models/interfaces";
 import { ConfirmationPage } from "../models/pages/ConfirmationPage";
+import { goToHomePage } from "../helpers/utils";
 
 const data: ContactDetails[] = [
     {
@@ -37,8 +38,8 @@ const data: ContactDetails[] = [
 test.describe('Run contact test 5 times', async () => {
     for (let i = 0; i < 5; i++) {
         test(`Run #${i+1}: Populate mandatory fields and validate successful submission message`, async ({ page }) => {
-            await page.goto(DOMAIN);
-            await expect(page).toHaveURL(DOMAIN_OCTOTORPHE);
+            /* Go to home page */
+            await goToHomePage(page);
         
             const jupiterToysPage: JupiterToysPage = new JupiterToysPage(page);
             

@@ -1,10 +1,11 @@
 import { expect, test } from "@playwright/test";
-import { DOMAIN, DOMAIN_OCTOTORPHE, URLS } from "../helpers/constants";
+import { URLS } from "../helpers/constants";
 import { ShopPage } from "../models/pages/ShopPage";
 import { JupiterToysPage } from "../models/pages/JupiterToysPage";
 import { CartSummary, Order } from "../models/interfaces";
 import { CartPage } from "../models/pages/CartPage";
 import { buyInShopPage } from "../helpers/populators";
+import { goToHomePage } from "../helpers/utils";
 
 const data: Order[] = [
     { product: 'Stuffed Frog', quantity: 2 },
@@ -14,8 +15,7 @@ const data: Order[] = [
 
 test('Buy orders and validate cart details', async ({ page }) => {
     /* Go to home page */
-    await page.goto(DOMAIN);
-    await expect(page).toHaveURL(DOMAIN_OCTOTORPHE);
+    await goToHomePage(page);
 
     const jupiterToysPage: JupiterToysPage = new JupiterToysPage(page);
 

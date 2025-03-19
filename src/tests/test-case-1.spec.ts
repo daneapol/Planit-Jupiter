@@ -1,9 +1,10 @@
 import { expect, test } from "@playwright/test";
-import { DOMAIN, DOMAIN_OCTOTORPHE, URLS } from "../helpers/constants";
+import { URLS } from "../helpers/constants";
 import { ContactPage } from "../models/pages/ContactPage";
 import { JupiterToysPage } from "../models/pages/JupiterToysPage";
 import { populateContactPage } from "../helpers/populators";
 import { ContactDetails } from "../models/interfaces";
+import { goToHomePage } from "../helpers/utils";
 
 const data: ContactDetails = {
     forename: 'Randolph',
@@ -13,8 +14,7 @@ const data: ContactDetails = {
 
 test('Verify error messages, populate mandatory fields, then validate that errors are gone', async ({ page }) => {
     /* Go to home page */
-    await page.goto(DOMAIN);
-    await expect(page).toHaveURL(DOMAIN_OCTOTORPHE);
+    await goToHomePage(page);
 
     /* From the home page go to contact page */
     const jupiterToysPage: JupiterToysPage = new JupiterToysPage(page);
